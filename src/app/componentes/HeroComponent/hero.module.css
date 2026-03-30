@@ -1,0 +1,12 @@
+.hero {
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero > h1 {
+    font-size: 50pt;
+    font-family: var(--myFont);
+}
