@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Geist } from "next/font/google";
+import { Inter, Geist, Jaro } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
