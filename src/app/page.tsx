@@ -1,6 +1,5 @@
 import Header from "./componentes/Header/Header";
 import Hero from "./componentes/HeroComponent/Hero";
-import LightPillar from "../components/LightPillar.jsx";
 
 export default function Home() {
   return (

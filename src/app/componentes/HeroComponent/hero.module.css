@@ -13,24 +13,22 @@
     font-family: var(--myFont);
 }
 
-.hero p {
-    width: 100%;
-    max-width: 550px;
-}
+
 
 .label {
-    background-color: rgba(0, 0, 255, 0.274);
-    padding: 7px 16px;
+    background-color: rgba(0, 0, 0, 0.171);
     border-radius: 50px;
+    width: 250px;
+    padding: 8px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.521);
 }
 
 .pulse {
     width: 20px;
     height: 20px;
-    background-color: rgb(11, 185, 142);
+    background-color: #25a55ae8;
     border-radius: 50%;
 }
