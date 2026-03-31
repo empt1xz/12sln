@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Geist, Jaro } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import LenisProvider from "./componentes/Lenis/LenisProvider";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -41,7 +42,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" className={cn(myFont.variable, "font-sans", geist.variable)}>
-      <body>{children}</body>
+      <body>
+        <LenisProvider>
+          {children}
+        </LenisProvider>
+      </body>
     </html>
   );
 }

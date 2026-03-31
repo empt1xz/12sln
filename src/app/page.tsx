@@ -1,20 +1,12 @@
 import Header from "./componentes/Header/Header";
 import Hero from "./componentes/HeroComponent/Hero";
-
+import Cards from "./componentes/SectionCards/Cards";
 export default function Home() {
   return (
     <>
-      <div
-        style={{
-          width: "100vw",
-          height: "100vh",
-          position: "relative",
-          background: 'black'
-        }}
-      >
-        <Hero />
-      </div>
-       <Header />
+      <Hero />
+      <Header />
+      <Cards />
     </>
   );
 }
