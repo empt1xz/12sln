@@ -2,11 +2,35 @@
     height: 100vh;
     color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .hero > h1 {
     font-size: 50pt;
     font-family: var(--myFont);
+}
+
+.hero p {
+    width: 100%;
+    max-width: 550px;
+}
+
+.label {
+    background-color: rgba(0, 0, 255, 0.274);
+    padding: 7px 16px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pulse {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(11, 185, 142);
+    border-radius: 50%;
 }
