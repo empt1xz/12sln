@@ -9,7 +9,7 @@ export default function Footer() {
             <footer className={Style.footer}>
                 <div className={Style.aboutus}>
                     <h1 className={Style.h1_aboutus}>12sln</h1>
-                    <p className={Style.p_aboutus}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, recusandae tempore ipsum natus numquam, quas error cum eius voluptas at similique iure rem labore quis, ratione eligendi alias id laudantium.</p>
+                    <p className={Style.p_aboutus}>12sln é uma startup de tecnologia fundada por 12 desenvolvedores profissionais que vão te guiar para a soluçao do seu problema.</p>
                 </div>
                 <div className={Style.navigation}>
                     <h1>Navegação</h1>
