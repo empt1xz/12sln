@@ -139,3 +139,31 @@
   }
 }
 
+
+/* Aqui vai ser a parte do Not Found, por isso está no Globals.CSS, não façam alteração aqui */
+
+
+.notfound {
+  background-color: black;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 20pt;
+}
+
+.notfound > button {
+  border: 1px solid #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+
+
+/* Aqui encerra o Not Found */
+
