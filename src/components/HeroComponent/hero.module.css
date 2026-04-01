@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+IE:wght@100..400&display=swap");
+
 .hero {
   height: 100dvh;
   color: white;
@@ -12,17 +14,18 @@
 }
 
 .content {
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .hero > .content > h1 {
   font-size: 50pt;
   font-family: var(--myFont);
+  font-weight: bolder;
   line-height: 80px;
 }
 
@@ -30,16 +33,17 @@
   background-color: rgba(0, 0, 0, 0.171);
   border-radius: 50px;
   width: 250px;
-  padding: 8px;
+  padding: 5px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid #dafdba;
+  border: 1px solid #fff;
+  color: #fff;
 }
 
 .pulse {
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   background-color: #25a55ae8;
   border-radius: 50%;
   position: relative;
@@ -57,7 +61,7 @@
 
 @keyframes pulse {
   0% {
-    transform: scale(1);
+    transform: scale(1.5);
     opacity: 0.6;
   }
 
@@ -82,21 +86,23 @@
 }
 
 .button_1 {
-  background-color: #9aeba3;
+  background-color: #ffffff;
   padding: 10px 16px;
-  border-radius: 20px;
+  border-radius: 8px;
   color: black;
 }
 
 .button_2 {
-  background-color: rgba(113, 233, 58, 0.171);
+  background-color: rgba(113, 233, 58, 0);
   padding: 10px 16px;
-  border-radius: 20px;
-  border: 1px solid #9aeba3;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
 }
 
 .headline_font {
-  color: #9aeba3;
+  background: linear-gradient(120deg, red, #800000);
+  background-clip: text;
+  color: transparent;
 }
 
 .background {

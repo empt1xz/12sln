@@ -9,7 +9,7 @@
 }
 
 .h1_aboutus {
-    color: #9aeba3;
+    color: #800000;
 }
 
 .p_aboutus {
@@ -32,7 +32,7 @@
 }
 
 .navigation > ul > li:hover {
-    color: #9aeba3;
+    color: #800000;
     cursor: pointer;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .support > ul > li:hover {
-    color: #9aeba3;
+    color: #800000;
     cursor: pointer;
 }
 
@@ -64,7 +64,7 @@
 }
 
 .faq > ul > li:hover {
-    color: #9aeba3;
+    color: #800000;
     cursor: pointer;
 }
 
