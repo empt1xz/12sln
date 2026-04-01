@@ -100,7 +100,9 @@
 }
 
 .headline_font {
-  color: #ff0000;
+  background: linear-gradient(120deg, red, #800000);
+  background-clip: text;
+  color: transparent;
 }
 
 .background {
