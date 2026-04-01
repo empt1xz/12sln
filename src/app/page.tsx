@@ -1,6 +1,6 @@
-import Header from "./componentes/Header/Header";
-import Hero from "./componentes/HeroComponent/Hero";
-import Cards from "./componentes/SectionCards/Cards";
+import Header from "../components/Header/Header";
+import Hero from "../components/HeroComponent/Hero";
+import Cards from "../components/SectionCards/Cards";
 export default function Home() {
   return (
     <>
