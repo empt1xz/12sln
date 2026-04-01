@@ -1,8 +1,10 @@
 
-
 import Style from "./footer.module.css"
 export default function Footer() {
 
+  function handleClick(text: string) {
+    alert(text)
+  }
 
     return (
         <>
@@ -14,28 +16,28 @@ export default function Footer() {
                 <div className={Style.navigation}>
                     <h1>Navegação</h1>
                     <ul>
-                        <li>Features</li>
-                        <li>Documentação</li>
-                        <li>Sobre</li>
+                        <li onClick={() => handleClick}>Features</li>
+                        <li onClick={() => handleClick}>Documentação</li>
+                        <li onClick={() => handleClick}>Sobre</li>
                     </ul>
                 </div>
                 <div className={Style.support}>
                     <h1>Suporte</h1>
                     <ul>
-                        <li>suporte@12sln.com.br</li>
-                        <li>Termos de Serviço</li>
-                        <li>Política de Privacidade</li>
+                        <li onClick={() => handleClick}>suporte@12sln.com.br</li>
+                        <li onClick={() => handleClick}>Termos de Serviço</li>
+                        <li onClick={() => handleClick}>Política de Privacidade</li>
                     </ul>
                 </div>
                 <div className={Style.faq}>
                     <h1>Faq Rápido</h1>
                     <ul>
-                        <li>Quanto tempo de prazo?</li>
-                        <li>Quais são as formas de pagamento?</li>
-                        <li>Existe custo de manutenção?</li>
-                        <li>Vocês oferecem suporte técnico?</li>
-                        <li>Vocês cuidam do domínio e hospedagem?</li>
-                        <li>Posso solicitar novas funcionalidades depois?</li>
+                        <li onClick={() => handleClick}>Quanto tempo de prazo?</li>
+                        <li onClick={() => handleClick}>Quais são as formas de pagamento?</li>
+                        <li onClick={() => handleClick}>Existe custo de manutenção?</li>
+                        <li onClick={() => handleClick}>Vocês oferecem suporte técnico?</li>
+                        <li onClick={() => handleClick}>Vocês cuidam do domínio e hospedagem?</li>
+                        <li onClick={() => handleClick}>Posso solicitar novas funcionalidades depois?</li>
                     </ul>
                 </div>
                 
