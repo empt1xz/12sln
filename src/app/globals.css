@@ -10,6 +10,7 @@
   box-sizing: border-box;
 }
 
+
 @theme inline {
   --font-heading: var(--font-sans);
   --font-sans: var(--font-sans);
