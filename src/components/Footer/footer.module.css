@@ -1,0 +1,90 @@
+.footer {
+    display: flex;
+    padding: 50px;
+    gap: 100px;
+    background-color: black;
+    color: rgb(216, 216, 216);
+    border-bottom: 1px solid grey;
+    justify-content: center;
+}
+
+.h1_aboutus {
+    color: #9aeba3;
+}
+
+.p_aboutus {
+    max-width: 350px;
+    font-size: .8rem;
+    text-align: justify;
+   
+}
+
+.navigation > h1 {
+    font-weight: bolder;
+    
+}
+
+.navigation > ul > li {
+    font-size: .8rem;
+    text-align: justify;
+    width: 30px;
+    line-height: 22px;
+}
+
+.navigation > ul > li:hover {
+    color: #9aeba3;
+    cursor: pointer;
+}
+
+.support > h1 {
+    font-weight: bolder;
+}
+
+.support > ul > li {
+    width: 150px;
+    font-size: .8rem;
+    line-height: 22px;
+}
+
+.support > ul > li:hover {
+    color: #9aeba3;
+    cursor: pointer;
+}
+
+.faq > h1 {
+    font-weight: bolder;
+}
+
+.faq > ul > li {
+    width: 270px;
+    text-align: justify;
+    flex-wrap: nowrap;
+    line-height: 22px;
+    font-size: .8rem;
+}
+
+.faq > ul > li:hover {
+    color: #9aeba3;
+    cursor: pointer;
+}
+
+.copyright {
+    text-align: center;
+    background-color: black;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.copyright p {
+    font-size: .8rem;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .footer {
+        display: flex;
+        gap: 50px;
+        flex-direction: column;
+    }
+}
