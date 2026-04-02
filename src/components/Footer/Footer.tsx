@@ -1,5 +1,6 @@
 "use client"
 
+import { CiCircleQuestion } from "react-icons/ci"
 import Style from "./footer.module.css"
 export default function Footer() {
 
@@ -12,7 +13,7 @@ export default function Footer() {
             <footer className={Style.footer}>
                 <div className={Style.aboutus}>
                     <h1 className={Style.h1_aboutus}>12sln</h1>
-                    <p className={Style.p_aboutus}>12sln é uma startup de tecnologia fundada por 12 desenvolvedores profissionais que vão te guiar para a soluçao do seu problema.</p>
+                    <p className={Style.p_aboutus}>12sln é uma startup de tecnologia fundada por 12 desenvolvedores profissionais que vão te guiar para a solução do seu problema.</p>
                 </div>
                 <div className={Style.navigation}>
                     <h1>Navegação</h1>
@@ -31,14 +32,14 @@ export default function Footer() {
                     </ul>
                 </div>
                 <div className={Style.faq}>
-                    <h1>Faq Rápido</h1>
+                        <h1><CiCircleQuestion size={20} strokeWidth="1px"/>FAQ Rápido</h1>
                     <ul>
-                        <li onClick={() => handleClick('a')}>Quanto tempo de prazo?</li>
-                        <li onClick={() => handleClick('a')}>Quais são as formas de pagamento?</li>
-                        <li onClick={() => handleClick('a')}>Existe custo de manutenção?</li>
-                        <li onClick={() => handleClick('a')}>Vocês oferecem suporte técnico?</li>
-                        <li onClick={() => handleClick('a')}>Vocês cuidam do domínio e hospedagem?</li>
-                        <li onClick={() => handleClick('a')}>Posso solicitar novas funcionalidades depois?</li>
+                        <li onClick={() => handleClick('a')}>"Quanto tempo de prazo?"</li>
+                        <li onClick={() => handleClick('a')}>"Quais são as formas de pagamento?"</li>
+                        <li onClick={() => handleClick('a')}>"Existe custo de manutenção?"</li>
+                        <li onClick={() => handleClick('a')}>"A 12sln oferece suporte técnico?"</li>
+                        <li onClick={() => handleClick('a')}>"A 12sln cuida do domínio e hospedagem?"</li>
+                        <li onClick={() => handleClick('a')}>"Posso solicitar novas funcionalidades depois?"</li>
                     </ul>
                 </div>
                 
