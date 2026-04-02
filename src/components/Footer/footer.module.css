@@ -10,12 +10,13 @@
 
 .h1_aboutus {
     color: red;
+    font-size: 1.3rem;
     font-weight: bolder;
 }
 
 .p_aboutus {
     max-width: 350px;
-    font-size: .8rem;
+    
     text-align: justify;
    
 }
@@ -26,10 +27,10 @@
 }
 
 .navigation > ul > li {
-    font-size: .8rem;
+    
     text-align: justify;
     width: 30px;
-    line-height: 22px;
+    line-height: 26px;
 }
 
 .navigation > ul > li:hover {
@@ -42,14 +43,18 @@
 }
 
 .support > ul > li {
-    width: 150px;
-    font-size: .8rem;
-    line-height: 22px;
+    width: 200px;
+    line-height: 26px;
 }
 
 .support > ul > li:hover {
     color: red;
     cursor: pointer;
+}
+
+.faq {
+    display: flex;
+    flex-direction: column;
 }
 
 .faq > h1 {
@@ -60,11 +65,10 @@
 }
 
 .faq > ul > li {
-    width: 300px;
+    width: 350px;
     text-align: justify;
     flex-wrap: nowrap;
-    line-height: 22px;
-    font-size: .8em;
+    line-height: 26px;
 }
 
 .faq > ul > li:hover {
@@ -80,7 +84,7 @@
 }
 
 .copyright p {
-    font-size: .8rem;
+    font-size: .9rem;
 }
 
 
