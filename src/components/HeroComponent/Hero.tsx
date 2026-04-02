@@ -43,7 +43,7 @@ export default function Hero() {
           </h1>
 
           <p>
-            Da ideia do produto final, criamos sistemas modernos, rápidos e
+            Da ideia ao produto final, criamos sistemas modernos, rápidos e
             eficientes.
           </p>
 
