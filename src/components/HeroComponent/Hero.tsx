@@ -58,7 +58,7 @@ export default function Hero({heroRef}: Props) {
           </p>
 
           <div className={Style.buttons}>
-            <button className={Style.button_1}>Fazer orçamento</button>
+            <button onClick={() => window.open("mailto:suporte@12sln.com.br")} className={Style.button_1}>Fazer orçamento</button>
             <button className={Style.button_2}>Explorar</button>
           </div>
         </div>
