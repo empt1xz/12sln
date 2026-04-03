@@ -14,7 +14,14 @@ import {
   SiPython,
 } from "react-icons/si";
 
-export default function Hero() {
+import { useRef, useEffect } from "react";
+
+
+type Props = {
+  heroRef: any
+}
+
+export default function Hero({heroRef}: Props) {
   const techLogos = [
     { node: <SiReact /> },
     { node: <SiTypescript /> },
@@ -23,6 +30,9 @@ export default function Hero() {
     { node: <SiPostgresql /> },
   ];
 
+
+
+
   return (
     <>
       <main className={Style.hero}>
@@ -30,7 +40,7 @@ export default function Hero() {
           <Aurora />
         </div>
 
-        <div className={Style.content}>
+        <div className={Style.content} ref={heroRef}>
           <div className={Style.label}>
             <div className={Style.pulse}></div>
             <p>Disponíveis para Projetos</p>
@@ -39,7 +49,7 @@ export default function Hero() {
           <h1>
             Construindo o Futuro
             <br />
-            <span className={Style.headline_font}>Linha por Linha</span>.
+            <span className={Style.headline_font}>Linha por Linha. </span>
           </h1>
 
           <p>
@@ -48,15 +58,18 @@ export default function Hero() {
           </p>
 
           <div className={Style.buttons}>
-            <button className={Style.button_1}>Como funciona</button>
-            <button className={Style.button_2}>Quem são os 12?</button>
+            <button className={Style.button_1}>Fazer orçamento</button>
+            <button className={Style.button_2}>Explorar</button>
           </div>
         </div>
 
-       
         <LogoLoop
-         //@ts-ignore
-         logos={techLogos} speed={70} gap={60} direction="left" />
+          //@ts-ignore
+          logos={techLogos}
+          speed={50}
+          gap={60}
+          direction="left"
+        />
       </main>
     </>
   );

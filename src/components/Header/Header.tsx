@@ -1,16 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Style from "./header.module.css";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
-export default function Header() {
+type Props = {
+  headerRef: React.RefObject<HTMLElement | null>
+}
+
+export default function Header({headerRef}: Props) {
   const [open, setOpen] = useState(false);
 
 
+
   return (
-    <header className={Style.header}>
+    <header ref={headerRef} className={Style.header}>
       <img src="/logotipo.png" alt="" />
 
       <button className={Style.menuBtn} onClick={() => setOpen(!open)}>

@@ -52,6 +52,10 @@
   gap: 20px;
 }
 
+.nav > a:hover {
+  color: red;
+}
+
 @media screen and (width < 768px) {
 
   .menuBtn {

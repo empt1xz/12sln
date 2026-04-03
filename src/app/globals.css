@@ -11,7 +11,6 @@
   user-select: none;
 }
 
-
 @theme inline {
   --font-heading: var(--font-sans);
   --font-sans: var(--font-sans);
@@ -140,9 +139,7 @@
   }
 }
 
-
 /* Aqui vai ser a parte do Not Found, por isso está no Globals.CSS, não façam alteração aqui */
-
 
 .notfound {
   background-color: black;
@@ -163,8 +160,28 @@
   cursor: pointer;
 }
 
-
-
-
 /* Aqui encerra o Not Found */
 
+/* 
+  Não mexam nisso, por favor.
+*/
+
+@media print {
+  body {
+    display: none;
+  }
+}
+
+/*  progressBar  */
+
+.progressBar {
+  width: 0%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #be000054;
+  height: 4px;
+  z-index: 9999;
+}
+
+/*  */
