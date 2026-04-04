@@ -1,0 +1,101 @@
+.faqList {
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    list-style:none;
+    background-color: black;
+    justify-content:center;
+    align-items:center;
+}
+
+.faqItem {
+    color: white;
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color 0.25s ease,
+              transform 0.2s ease,
+              box-shadow 0.25s ease;
+}
+
+.faqItem:hover {
+    border-color: rgba(201, 9, 9, 0.35);
+  background: rgba(255, 255, 255, 0.09);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.faqQuestion {
+    width: 100%;
+    background: none;
+    border:none;
+    padding: 20px 22px;
+    display: flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    cursor:pointer;
+    text-align:left;
+}
+
+.faqQuestion:focus-visible {
+  outline: 2px solid var(--myFont);
+  outline-offset: -2px;
+  border-radius: 14px;
+}
+
+.faqQuestionText {
+  font-size: 15px;
+  font-weight: 500;
+  color: #e2e8f0;
+  line-height: 1.45;
+  flex: 1;
+}
+
+.faqQuestionIcon {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(167, 139, 250, 0.12);
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  color:rgba(215, 66, 66, 0.99);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+  background 0.25s ease;
+}
+
+.faqItemOpen .faqQuestionIcon {
+  transform: rotate(180deg);
+  background: rgba(167, 139, 250, 0.25);
+}
+
+.faqAnswer {
+  padding: 0 22px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  transition:
+    max-height 0.7s ease,
+    opacity 0.3s ease,
+    padding 0.3s ease;
+}
+
+.faqItemOpen .faqAnswer {
+  max-height: 300px;
+  opacity: 1;
+  padding: 0 22px 20px;
+}
+
+.faqAnswerText {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.75;
+  padding-top: 16px;
+  margin: 0;
+}
