@@ -1,5 +1,4 @@
 "use client";
-import Timeline from "@/components/Timeline/Timeline";
 import Footer from "@/components/Footer/Footer";
 import Header from "../components/Header/Header";
 import Hero from "../components/HeroComponent/Hero";
@@ -44,7 +43,6 @@ export default function Home() {
 
       <Header headerRef={headerRef} />
       <Hero heroRef={heroRef} />
-      <Timeline />
     </>
   );
 }
