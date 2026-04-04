@@ -1,1 +1,3 @@
 // Apenas para fazer Declarações de Types aqui, não façam declarações desnecessárias.
+
+declare module 'swiper/css'

@@ -1,4 +1,5 @@
 "use client";
+// import Team from "@/components/Team/Team";
 import Footer from "@/components/Footer/Footer";
 import Header from "../components/Header/Header";
 import Hero from "../components/HeroComponent/Hero";
@@ -20,12 +21,11 @@ export default function Home() {
       opacity: 0,
       y: -120,
       duration: 1,
-    })
-    .from(heroRef.current, {
+    }).from(heroRef.current, {
       x: -120,
       opacity: 0,
-      duration: 1
-    })
+      duration: 1,
+    });
   }, []);
 
   useEffect(() => {
@@ -43,6 +43,7 @@ export default function Home() {
 
       <Header headerRef={headerRef} />
       <Hero heroRef={heroRef} />
+      {/* <Team/> */}
     </>
   );
 }
