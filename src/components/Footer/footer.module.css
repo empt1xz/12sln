@@ -87,12 +87,16 @@
     font-size: .9rem;
 }
 
-
-
 @media screen and (max-width: 768px) {
     .footer {
         display: flex;
         gap: 50px;
         flex-direction: column;
     }
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    width: 33.33%;
+  }
 }

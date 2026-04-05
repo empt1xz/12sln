@@ -46,9 +46,9 @@ export default function Team() {
     {
 
       foto: "/rai.jpg",
-      nome: "Rai Davyd",
+      nome: "Ray Davyd",
       cargo: "Front end - Developer",
-      github: "@RaiDavyd"
+      github: "@RayDavyd"
     },
     {
 
@@ -115,7 +115,6 @@ export default function Team() {
     });
     const elementOne = tituloRef.current;
     const elementTwo = navRef.current;
-    const elementThree = card.current;
     timeline
       .fromTo(
         elementOne,

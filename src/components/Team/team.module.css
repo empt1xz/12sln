@@ -95,3 +95,9 @@
 .info > span {
     color: gray;
 }
+
+@media screen and (height < 600px){
+    .containerCards{
+        
+    }
+}
