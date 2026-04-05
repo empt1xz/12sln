@@ -78,7 +78,7 @@ const cardsSoftware = [
 
 function ProblemSolutions() {
   return (
-    <section className={Style.ProblemSolutions}>
+    <section className={Style.ProblemSolutions} id='problem'>
       <div className={Style.headerProblem}>
         <h2 className={Style.headline}>
           Reconhece algum <span className={Style.textGradient}>desses problemas?</span>

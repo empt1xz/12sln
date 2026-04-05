@@ -59,7 +59,10 @@ export default function Hero({heroRef}: Props) {
 
           <div className={Style.buttons}>
             <button onClick={() => window.open("mailto:suporte@12sln.com.br")} className={Style.button_1}>Fazer orçamento</button>
-            <button className={Style.button_2}>Explorar</button>
+            <a href="#problem">
+              <button className={Style.button_2}>
+              Navegar</button>
+            </a>
           </div>
         </div>
 

@@ -11,8 +11,9 @@
   user-select: none;
 }
 
-body {
+body, html{
   background-color: black;
+  scroll-behavior: smooth;
 }
 
 @theme inline {

@@ -3,6 +3,7 @@ import Style from "./team.module.css";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Team() {
 
@@ -13,13 +14,13 @@ export default function Team() {
       foto: "/alicia.jpg",
       nome: "Alicia Cristina",
       cargo: "Contabilidade",
-      linkedin: "@Alicia",
+      linkedin: <FaLinkedin size={30} color={'#0e76a8'} />,
     },
     {
       foto: "/sofia.jpg",
       nome: "Sofia Felicio",
       cargo: "Gestão Comercial",
-      linkedin: "@Felicio"
+      linkedin: <FaLinkedin size={30} color={'#0e76a8'} />
     }
   ];
 
@@ -28,55 +29,53 @@ export default function Team() {
       foto: "/buss.jpg",
       nome: "Weberson Rodrigues",
       cargo: "Backend Developer",
-      github: "@WebersonRodrigues",
+      github: <FaGithub size={30} color={'white'} />,
     },
       {
       foto: "/amanda.jpg",
       nome: "Amanda Inagaki",
       cargo: "Front end - Developer",
-      github: "@InagakiDev",
+      github: <FaGithub size={30} color={'white'} />,
     },
     {
-
       foto: "/iris.jpg",
       nome: "Iris Bispo",
       cargo: "Front end - Developer",
-      github: "@IrisBispo"
-    },
-    {
-
+      github: <FaGithub size={30} color={'white'} />
+    }, 
+      {
       foto: "/rai.jpg",
       nome: "Ray Davyd",
       cargo: "Front end - Developer",
-      github: "@RayDavyd"
+      github: <FaGithub size={30} color={'white'} />
     },
     {
 
       foto: "/nanda.jpg",
       nome: "Fernanda Rasi",
       cargo: "Analista de Segurança",
-      github: "@Nanda"
-    },
+      github: <FaGithub size={30} color={'white'} />
+      },
         {
 
       foto: "/vitor.jpg",
       nome: "Vitor Pagotto",
       cargo: "Front End - Developer",
-      github: "@Vitor"
+      github: <FaGithub size={30} color={'white'} />
     },
        {
 
       foto: "/empty.jpg",
       nome: "Roger Menezes",
       cargo: "FullStack - Developer",
-      github: "@empt1xz"
+      github: <FaGithub size={30} color={'white'} />
     },
        {
 
       foto: "/",
       nome: "Felippe Moraes",
       cargo: "Front End - Developer",
-      github: "@azuley"
+      github: <FaGithub size={30} color={'white'} />
     },
 
   ];
@@ -86,13 +85,13 @@ export default function Team() {
       foto: "/raissa.jpg",
       nome: "Raissa Menezes",
       cargo: "UX/UI",
-      portfolio: "@Raissa",
+      portfolio: <FaLinkedin size={35} color={'#0e76a8'} />,
     },
-        {
+    {
       foto: "/kamile.jpg",
       nome: "Kamile Vitória",
       cargo: "UX/UI",
-      portfolio: "@Kamile",
+      portfolio: <FaLinkedin size={30} color={'#0e76a8'} />,
     },
   ];
 
@@ -100,6 +99,28 @@ export default function Team() {
   const mainRef = useRef(null);
   const navRef = useRef(null);
   const card = useRef(null)
+  const containerRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const container = containerRef.current
+    if (!container) return
+
+    const interval = setInterval(() => {
+      const card = container.querySelector('[class*="cardsz"]') as HTMLElement | null
+      const cardWidth = (card?.offsetWidth ?? 0) + 6
+      const maxScroll = container.scrollWidth - container.clientWidth
+
+      if (container.scrollLeft >= maxScroll - 10) {
+        container.scrollTo({ left: 0, behavior: 'smooth'})
+      } else {
+        container.scrollBy({ left: cardWidth, behavior: 'smooth'})
+      }
+    }, 3000)
+
+    return () => clearInterval (interval)
+  }, [tab])
+    
+    
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -142,7 +163,7 @@ export default function Team() {
   return (
     <main className={Style.main} ref={mainRef}>
       <h1 ref={tituloRef} className="text-6xl">
-        Conheça nossa equipe
+        Conheça nossa <span className={Style.equipe}>Equipe</span>
       </h1>
       <nav ref={navRef}>
         <p onClick={() => setTab('dev')}>Developers</p>
@@ -150,7 +171,7 @@ export default function Team() {
         <p onClick={() => setTab('gestao')}>Gestão</p>
       </nav>
 
-      <section className={Style.containerCards}>
+      <section className={Style.containerCards} ref={containerRef}>
           {tab === 'dev' && Developers.map((dev, index) => (
 
              <div id="cardsz" key={index} className={Style.cardsz} ref={card}>
