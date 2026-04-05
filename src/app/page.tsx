@@ -6,6 +6,8 @@ import Hero from "../components/HeroComponent/Hero";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef, useEffect } from "react";
+import ProblemSolutions from "@/components/ProblemSolutions/ProblemSolutions";
+import FAQ from "@/components/Faq/Faq";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,6 +45,8 @@ export default function Home() {
 
       <Header headerRef={headerRef} />
       <Hero heroRef={heroRef} />
+      <ProblemSolutions/>
+      <FAQ/>
       <Team/>
     </>
   );
