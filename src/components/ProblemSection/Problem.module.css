@@ -10,6 +10,7 @@
 
 .headerProblem {
     display: flex;
+    margin-top: 27px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
