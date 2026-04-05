@@ -6,6 +6,9 @@
     background-color: black;
     justify-content:center;
     align-items:center;
+    width: 100%;
+    padding: 60px 20px;
+    min-height: auto;
 }
 
 .faqItem {
