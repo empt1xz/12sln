@@ -45,7 +45,7 @@ export default function Team() {
     }, 
       {
       foto: "/rai.jpg",
-      nome: "Ray Davyd",
+      nome: "Rai Davyd",
       cargo: "Front end - Developer",
       github: <FaGithub size={30} color={'white'} />
     },
@@ -85,7 +85,7 @@ export default function Team() {
       foto: "/raissa.jpg",
       nome: "Raissa Menezes",
       cargo: "UX/UI",
-      portfolio: <FaLinkedin size={35} color={'#0e76a8'} />,
+      portfolio: <FaLinkedin size={30} color={'#0e76a8'} />,
     },
     {
       foto: "/kamile.jpg",
