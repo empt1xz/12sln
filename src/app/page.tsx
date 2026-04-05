@@ -1,5 +1,5 @@
 "use client";
-// import Team from "@/components/Team/Team";
+import Team from "@/components/Team/Team";
 import Footer from "@/components/Footer/Footer";
 import Header from "../components/Header/Header";
 import Hero from "../components/HeroComponent/Hero";
@@ -43,7 +43,7 @@ export default function Home() {
 
       <Header headerRef={headerRef} />
       <Hero heroRef={heroRef} />
-      {/* <Team/> */}
+      <Team/>
     </>
   );
 }

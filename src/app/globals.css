@@ -11,6 +11,10 @@
   user-select: none;
 }
 
+body {
+  background-color: black;
+}
+
 @theme inline {
   --font-heading: var(--font-sans);
   --font-sans: var(--font-sans);
