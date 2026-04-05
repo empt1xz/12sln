@@ -14,7 +14,10 @@
 body, html{
   background-color: black;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+}
+
+.swiper-wrapper {
+  transition-timing-function: linear !important;
 }
 
 @theme inline {

@@ -5,9 +5,16 @@ import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
+// ✅ SWIPER
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Autoplay } from "swiper/modules";
+
 export default function Team() {
   const [tab, setTab] = useState("dev");
+  const swiperRef = useRef<any>(null);
 
+  // ✅ Dados
   const Gestao = [
     {
       foto: "/alicia.jpg",
@@ -77,68 +84,43 @@ export default function Team() {
     },
   ];
 
+  // ✅ Seleção dinâmica
+  const data = tab === "dev" ? Developers : tab === "ui" ? Designers : Gestao;
+
+  // 🔥 DUPLICAÇÃO (loop infinito real)
+  const loopData = [...data, ...data, ...data];
+
+  // ✅ GSAP
   const tituloRef = useRef(null);
   const mainRef = useRef(null);
   const navRef = useRef(null);
-  const card = useRef(null);
-  const containerRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const interval = setInterval(() => {
-      const card = container.querySelector(
-        '[class*="cardsz"]',
-      ) as HTMLElement | null;
-      const cardWidth = (card?.offsetWidth ?? 0) + 6;
-      const maxScroll = container.scrollWidth - container.clientWidth;
-
-      if (container.scrollLeft >= maxScroll - 10) {
-        container.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        container.scrollBy({ left: cardWidth, behavior: "smooth" });
-      }
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [tab]);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const triggerReference = mainRef.current;
     const timeline = gsap.timeline({
       scrollTrigger: {
         scrub: true,
         start: "top 60%",
         end: "top 10%",
-        trigger: triggerReference,
+        trigger: mainRef.current,
       },
     });
-    const elementOne = tituloRef.current;
-    const elementTwo = navRef.current;
+
     timeline
       .fromTo(
-        elementOne,
-        {
-          opacity: 0,
-          x: -420,
-          filter: "blur(2px)",
-        },
-        {
-          filter: "blur(0)",
-          opacity: 1,
-          x: 0,
-        },
+        tituloRef.current,
+        { opacity: 0, x: -420, filter: "blur(2px)" },
+        { opacity: 1, x: 0, filter: "blur(0)" },
       )
-      .from(elementTwo, {
+      .from(navRef.current, {
         opacity: 0,
         y: 200,
       })
-      .from("#cardsz", {
+      .from(`.${Style.cardsz}`, {
         opacity: 0,
         x: -200,
+        stagger: 0.1,
       });
   }, [tab]);
 
@@ -147,70 +129,59 @@ export default function Team() {
       <h1 ref={tituloRef} className="text-6xl">
         Conheça nossa <span className={Style.equipe}>Equipe</span>
       </h1>
+
       <nav ref={navRef}>
         <p onClick={() => setTab("dev")}>Developers</p>
         <p onClick={() => setTab("ui")}>Designer</p>
         <p onClick={() => setTab("gestao")}>Gestão</p>
       </nav>
 
-      <section className={Style.containerCards} ref={containerRef}>
-        {tab === "dev" &&
-          Developers.map((dev, index) => (
-            <div id="cardsz" key={index} className={Style.cardsz} ref={card}>
-              <div className={Style.containerImg}>
-                <img src={dev.foto} alt="" />
-              </div>
-
-              <section className={Style.info}>
-                <div>
-                  <h1>{dev.nome}</h1>
-                  <p>{dev.cargo}</p>
-                </div>
-
-                <span>{dev.github}</span>
-              </section>
-            </div>
-          ))}
-
-        {tab === "ui" &&
-          Designers.map((designer, index) => (
-            <>
-              <div id="cardsz" key={index} className={Style.cardsz} ref={card}>
+      <section className={Style.containerCards}>
+        <Swiper
+          key={tab}
+          modules={[Autoplay]}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          loop={false} // ❌ DESLIGADO
+          speed={6000}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+          }}
+          allowTouchMove={false}
+          spaceBetween={100}
+          initialSlide={data.length} // começa no meio
+          breakpoints={{
+            0: { slidesPerView: 1.2 },
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            1400: { slidesPerView: 4 },
+          }}
+        >
+          {loopData.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className={Style.cardsz}>
                 <div className={Style.containerImg}>
-                  <img src={designer.foto} alt="" />
+                  <img src={item.foto} alt="" />
                 </div>
 
                 <section className={Style.info}>
                   <div>
-                    <h1>{designer.nome}</h1>
-                    <p>{designer.cargo}</p>
+                    <h1>{item.nome}</h1>
+                    <p>{item.cargo}</p>
                   </div>
 
-                  <span>{designer.portfolio}</span>
+                  <span>
+                    {"github" in item
+                      ? item.github
+                      : "portfolio" in item
+                        ? item.portfolio
+                        : item.linkedin}
+                  </span>
                 </section>
               </div>
-            </>
+            </SwiperSlide>
           ))}
-
-        {tab === "gestao" &&
-          Gestao.map((gestao, index) => (
-            <>
-              <div id="cardsz" key={index} className={Style.cardsz} ref={card}>
-                <div className={Style.containerImg}>
-                  <img src={gestao.foto} alt="" />
-                </div>
-
-                <section className={Style.info}>
-                  <div>
-                    <h1>{gestao.nome}</h1>
-                    <p>{gestao.cargo}</p>
-                  </div>
-
-                  <span>{gestao.linkedin}</span>
-                </section>
-              </div>
-            </>
-          ))}
+        </Swiper>
       </section>
     </main>
   );

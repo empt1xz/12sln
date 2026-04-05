@@ -149,6 +149,7 @@ export default function Aurora(props) {
       delete geometry.attributes.uv;
     }
 
+
     const colorStopsArray = colorStops.map(hex => {
       const c = new Color(hex);
       return [c.r, c.g, c.b];

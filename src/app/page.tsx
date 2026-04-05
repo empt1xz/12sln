@@ -11,6 +11,7 @@ import ProblemSolutions from "@/components/ProblemSection/Problem";
 
 gsap.registerPlugin(ScrollTrigger);
 
+
 export default function Home() {
   const progressRef = useRef(null);
   const headerRef = useRef(null);
