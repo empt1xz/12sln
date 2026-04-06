@@ -88,7 +88,7 @@ export default function FAQ({ items = faq_items, allowMultiple = false }) {
 
   return (
     <>
-    <div  style={{marginTop: "100px"}}>
+    <div  style={{marginTop: "30px"}}>
     <Headline
         label="faq"
         titulo="Perguntas Frequentes"
