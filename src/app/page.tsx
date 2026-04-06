@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef, useEffect } from "react";
 import Faq from "@/components/Faq/Faq";
 import ProblemSolutions from "@/components/ProblemSection/Problem";
+import ProcessTimeline from '@/components/Timeline/Timeline'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,8 +48,10 @@ export default function Home() {
       <Header headerRef={headerRef} />
       <Hero heroRef={heroRef} />
       <ProblemSolutions />
-      <Faq />
+      <ProcessTimeline />
       <Team />
+      <Faq />
+      
     </>
   );
 }

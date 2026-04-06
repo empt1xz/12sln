@@ -24,7 +24,7 @@
 }
 
 .hero > .content > h1 {
-  font-size: 50pt;
+  font-size: 4rem;
   font-family: var(--myFont);
   font-weight: bolder;
   line-height: 80px;
@@ -50,6 +50,7 @@
   border-radius: 50%;
   position: relative;
 }
+
 
 .pulse::before {
   content: "";
@@ -115,14 +116,22 @@
   z-index: 0;
 }
 
+
+
 @media (max-width: 560px) {
   .hero > .content > h1 {
-    font-size: 2.4rem;
+    font-size: 2rem;
     line-height: normal;
   }
   .hero{
     height: 100vh;
   }
+
+  .hero > .content > p {
+    width: 100%;
+    max-width: 350px;
+  }
+
 }
 
 @media screen and (height < 600px){

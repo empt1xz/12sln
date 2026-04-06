@@ -46,7 +46,7 @@ export default function Hero({heroRef}: Props) {
             <p>Disponíveis para Projetos</p>
           </div>
 
-          <h1>
+          <h1 className={Style.headline}>
             Construindo o Futuro
             <br />
             <span className={Style.headline_font}>Linha por Linha. </span>

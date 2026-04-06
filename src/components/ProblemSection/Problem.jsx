@@ -1,7 +1,7 @@
 import Style from './Problem.module.css'
 import CardProblem from '../CardProblem/CardProblem'
 import { MdMonitor, MdBuild, MdTrendingUp, MdAutorenew, MdBarChart } from "react-icons/md"
-
+import Headline from '@/components/Headline/Headline'
 const cards = [
   {
     icon: <MdMonitor />,
@@ -79,13 +79,12 @@ const cardsSoftware = [
 function ProblemSolutions() {
   return (
     <section className={Style.ProblemSolutions} id='problem'>
-      <div className={Style.headerProblem}>
-        <h2 className={Style.headline}>
-          Reconhece algum <span className={Style.textGradient}>desses problemas?</span>
-        </h2>
-        <p className={Style.subheadline}>
-          A maioria das empresas já passou por isso. Você não precisa continuar assim.
-        </p>
+      <div style={{marginTop: "20px"}}>
+        <Headline
+          label= "Nossa Solução"
+          titulo="Reconhece algum desses problemas?"
+          descricao="A maioria das empresas já passou por isso. Você não precisa continuar assim."
+        />
       </div>
 
     <div className={Style.sectionDivider}>

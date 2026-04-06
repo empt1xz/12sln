@@ -1,5 +1,6 @@
 import Style from './Faq.module.css'
 import { useState, useId } from 'react'
+import Headline from '@/components/Headline/Headline'
 
 
 const faq_items = [
@@ -31,8 +32,8 @@ const faq_items = [
 
 function FaqItem({ question, answer, isOpen, onToggle, questionId, answerId }) {
   return (
+    
     <div className={`${Style.faqItem} ${isOpen ? Style.faqItemOpen : ""}`} role="listitem">
-
       <button
         className={Style.faqQuestion}
         onClick={onToggle}
@@ -86,6 +87,14 @@ export default function FAQ({ items = faq_items, allowMultiple = false }) {
   }
 
   return (
+    <>
+    <div  style={{marginTop: "100px"}}>
+    <Headline
+        label="faq"
+        titulo="Perguntas Frequentes"
+        descricao="Esclareça suas dúvidas rapidamente."
+      />
+      </div>
     <ul role="list" className={Style.faqList}>
       {items.map((item, index) => (
         <FaqItem
@@ -99,5 +108,7 @@ export default function FAQ({ items = faq_items, allowMultiple = false }) {
         />
       ))}
     </ul>
+
+    </>
   );
 }
