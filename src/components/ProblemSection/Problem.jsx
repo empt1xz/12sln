@@ -79,7 +79,7 @@ const cardsSoftware = [
 function ProblemSolutions() {
   return (
     <section className={Style.ProblemSolutions} id='problem'>
-      <div style={{marginTop: "20px"}}>
+      <div style={{marginTop: "40px"}}>
         <Headline
           label= "Nossa Solução"
           titulo="Reconhece algum desses problemas?"
