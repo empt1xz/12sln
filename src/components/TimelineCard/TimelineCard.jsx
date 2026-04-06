@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react"
 function useInView(options = {}) {
   const ref = useRef(null)
   const [inView, setInView] = useState(false)
-
+  
   useEffect(() => {
     const el = ref.current
     if (!el) return

@@ -4,8 +4,6 @@ import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-
-// ✅ SWIPER
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
@@ -14,83 +12,78 @@ export default function Team() {
   const [tab, setTab] = useState("dev");
   const swiperRef = useRef<any>(null);
 
-  // ✅ Dados
-  const Gestao = [
+  const Team = [
     {
+      foto: "/buss.jpg",
+      nome: "Weberson Rodrigues",
+      cargo: "Developer",
+      github: <FaGithub size={30} color={"white"} />,
+    },
+        {
       foto: "/alicia.jpg",
       nome: "Alicia Cristina",
-      cargo: "Contabilidade",
+      cargo: "Chief Financial Officer",
       linkedin: <FaLinkedin size={30} color={"#0e76a8"} />,
     },
     {
       foto: "/sofia.jpg",
       nome: "Sofia Felicio",
-      cargo: "Gestão Comercial",
+      cargo: "Gestão",
       linkedin: <FaLinkedin size={30} color={"#0e76a8"} />,
-    },
-  ];
-
-  const Developers = [
-    {
-      foto: "/buss.jpg",
-      nome: "Weberson Rodrigues",
-      cargo: "Backend Developer",
-      github: <FaGithub size={30} color={"white"} />,
     },
     {
       foto: "/amanda.jpg",
       nome: "Amanda Inagaki",
-      cargo: "Front end - Developer",
+      cargo: "Chief Technology Officer",
       github: <FaGithub size={30} color={"white"} />,
     },
     {
       foto: "/iris.jpg",
       nome: "Iris Bispo",
-      cargo: "Front end - Developer",
+      cargo: "Developer",
       github: <FaGithub size={30} color={"white"} />,
     },
     {
       foto: "/rai.jpg",
       nome: "Rai Davyd",
-      cargo: "Front end - Developer",
+      cargo: "Developer",
       github: <FaGithub size={30} color={"white"} />,
     },
     {
       foto: "/vitor.jpg",
       nome: "Vitor Pagotto",
-      cargo: "Front End - Developer",
+      cargo: "Developer",
       github: <FaGithub size={30} color={"white"} />,
     },
     {
       foto: "/empty.jpg",
       nome: "Roger Menezes",
-      cargo: "FullStack - Developer",
+      cargo: "Chief Executive Officer",
       github: <FaGithub size={30} color={"white"} />,
     },
-  ];
-
-  const Designers = [
-    {
+     {
       foto: "/raissa.jpg",
       nome: "Raissa Menezes",
-      cargo: "UX/UI",
+      cargo: "Designer / Social Media",
       portfolio: <FaLinkedin size={30} color={"#0e76a8"} />,
     },
     {
       foto: "/kamile.jpg",
       nome: "Kamile Vitória",
-      cargo: "UX/UI",
+      cargo: "Designer / Social Media",
       portfolio: <FaLinkedin size={30} color={"#0e76a8"} />,
     },
+    {
+      foto: "/nanda.jpg",
+      nome: "Fernanda Rasi",
+      cargo: "Cybersecurity",
+      portfolio: <FaLinkedin size={30} color="#0e76a8"/>
+    }
   ];
 
-  // ✅ Seleção dinâmica
-  const data = tab === "dev" ? Developers : tab === "ui" ? Designers : Gestao;
-
-  // 🔥 DUPLICAÇÃO (loop infinito real)
+  const data = Team
   const loopData = [...data, ...data, ...data];
 
-  // ✅ GSAP
   const tituloRef = useRef(null);
   const mainRef = useRef(null);
   const navRef = useRef(null);
@@ -131,9 +124,7 @@ export default function Team() {
       </h1>
 
       <nav ref={navRef}>
-        <p onClick={() => setTab("dev")}>Developers</p>
-        <p onClick={() => setTab("ui")}>Designer</p>
-        <p onClick={() => setTab("gestao")}>Gestão</p>
+        <p>Equipe</p>
       </nav>
 
       <section className={Style.containerCards}>
@@ -141,7 +132,7 @@ export default function Team() {
           key={tab}
           modules={[Autoplay]}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
-          loop={false} // ❌ DESLIGADO
+          loop={false} 
           speed={6000}
           autoplay={{
             delay: 0,
@@ -156,6 +147,7 @@ export default function Team() {
             1024: { slidesPerView: 3 },
             1400: { slidesPerView: 4 },
           }}
+          
         >
           {loopData.map((item, index) => (
             <SwiperSlide key={index}>
