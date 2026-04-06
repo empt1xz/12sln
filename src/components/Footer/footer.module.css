@@ -1,102 +1,117 @@
 .footer {
     display: flex;
-    padding: 50px;
-    gap: 100px;
-    background-color: black;
-    color: rgb(216, 216, 216);
-    border-bottom: 1px solid grey;
+    
+    align-items: flex-start;
+    padding: 35px 40px;
     justify-content: center;
+    gap: 100px;
+    background-color: #000;
+    color: rgb(216, 216, 216);
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.aboutus {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .h1_aboutus {
-    color: red;
-    font-size: 1.3rem;
-    font-weight: bolder;
+    color: #800000;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .p_aboutus {
-    max-width: 350px;
-    
+    max-width: 280px;
     text-align: justify;
-   
+    line-height: 1.4;
+    font-size: .95rem;
 }
 
-.navigation > h1 {
-    font-weight: bolder;
-    
-}
 
-.navigation > ul > li {
-    
-    text-align: justify;
-    width: 30px;
-    line-height: 26px;
-}
-
-.navigation > ul > li:hover {
-    color: red;
+.backtostart svg {
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 50%;
+    transition: .2s ease;
     cursor: pointer;
 }
 
-.support > h1 {
-    font-weight: bolder;
-}
-
-.support > ul > li {
-    width: 200px;
-    line-height: 26px;
-}
-
-.support > ul > li:hover {
-    color: red;
-    cursor: pointer;
-}
-
-.faq {
+.navigation {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
-.faq > h1 {
+.navigation h1 {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navigation ul li {
+    line-height: 28px;
+    transition: .2s ease;
+}
+
+.navigation ul li:hover {
+    color: red;
+    cursor: pointer;
+    transform: translateX(4px);
+}
+
+
+.backtostart {
+    
     display: flex;
+    border-radius: 8px;
+    width: 200px;
+    flex-direction: row;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+}
+
+.backtostart svg {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+
+.h1_backto {
     font-weight: bolder;
 }
 
-.faq > ul > li {
-    width: 350px;
-    text-align: justify;
-    flex-wrap: nowrap;
-    line-height: 26px;
-}
-
-.faq > ul > li:hover {
-    color: red;
-    cursor: pointer;
-}
 
 .copyright {
+    border-top: 1px solid #222;
     text-align: center;
     background-color: black;
     color: #ffffff;
-    padding: 10px;
+    padding: 15px;
 }
 
 .copyright p {
     font-size: .9rem;
 }
 
+
+
 @media screen and (max-width: 768px) {
     .footer {
-        display: flex;
-        gap: 50px;
         flex-direction: column;
+        padding: 50px 30px;
+        gap: 40px;
     }
-}
 
-@media (min-width: 1024px) {
-  .footer {
-    width: 33.33%;
-  }
+    .backtostart {
+        justify-content: center;
+        margin: auto;
+    }
 }
