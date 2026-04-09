@@ -3,6 +3,7 @@ import { Inter, Geist, Jaro } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import LenisProvider from "../components/Lenis/LenisProvider";
+import WhatsAppButton from '@/components/ButtonFloating/Floating'
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -46,6 +47,7 @@ export default function RootLayout({
         <LenisProvider>
           {children}
         </LenisProvider>
+        <WhatsAppButton />
       </body>
     </html>
   );

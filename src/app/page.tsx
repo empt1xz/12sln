@@ -52,7 +52,7 @@ export default function Home() {
       <Team />
       <Faq />
       <Footer/>
-      
     </>
   );
 }
+

@@ -14,7 +14,7 @@ function useInView(options = {}) {
       ([entry]) => {
         setInView(entry.isIntersecting)
       },
-      { threshold: 0.2, ...options }
+      { threshold: 0.1, ...options }
     )
 
     obs.observe(el)
@@ -50,7 +50,7 @@ export default function TimelineCard({ step, side, index }) {
     transform: inView
       ? "translateX(0)"
       : `translateX(${isLeft ? "-32px" : "32px"})`,
-    transition: `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`,
+    transition: `opacity 0.1s ease ${index * 0.1}s, transform 0.1s ease ${index * 0.1}s`,
   }
 
   const dotStyle = {
